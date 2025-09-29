@@ -51,4 +51,23 @@ Route::get("/felhasznaloiadat", function (){
     ]);
 });
 
+Route::get('posts/{post}', function ($post) {
+
+    $posts = [
+        "first" =>'Első blog',
+        "second" =>'Második blog',
+    ];
+
+    return view('postnezet',[
+        'posttartalma' => $posts[$post] ?? "Nincs ilyen blogbejegyzés"
+    ]);
+});
+
+Route::get('/vezerlo/{post}', [
+    'App\Http\Controllers\PostController',
+    'show'
+]);
+
+
+
 
