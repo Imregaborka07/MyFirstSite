@@ -68,6 +68,11 @@ Route::get('/vezerlo/{post}', [
     'show'
 ]);
 
+Route::get('/csoport', [
+    'App\Http\Controllers\GroupController',
+    'list'
+]);
+
 
 
 
