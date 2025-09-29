@@ -14,4 +14,11 @@ class GroupController extends Controller
             'csoportok' => $csoport
         ]);
     }
+
+    function show($id){
+
+        return view('nezet',[
+            'csoporttag' => Group::csoporLista()[$id],
+        ]);
+    }
 }
